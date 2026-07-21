@@ -1,0 +1,179 @@
+/* ============================================================================
+ * responsive.css — 多端响应式适配 (v5.0 ULTIMATE)
+ * 参考《第十七章：多端测试检查体系》规范
+ * 移动端优先，逐级向上适配
+ * ========================================================================== */
+
+/* ---- 超小屏 320px (低端安卓) ---- */
+@media (max-width: 360px) {
+  .login-title { font-size: 18px !important; }
+  .login-box { padding: 24px 16px !important; }
+  .bottom-nav span { display: none; }
+  .bottom-nav button { font-size: 20px; padding: 8px; }
+  .social-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .gift-grid { grid-template-columns: 1fr !important; }
+  .video-grid { grid-template-columns: 1fr !important; }
+  .merit-grid { grid-template-columns: 1fr !important; }
+  .hero-title { font-size: 24px !important; }
+  .hero-sub { font-size: 12px !important; }
+  .glass-card { padding: 16px !important; }
+  .album-carousel { max-width: 100%; }
+  #album-slides img { max-height: 220px !important; }
+  .entry-grid { grid-template-columns: 1fr !important; }
+  .about-grid { grid-template-columns: 1fr !important; }
+  .modal-box { width: 100vw !important; max-width: 100vw !important; border-radius: 0 !important; }
+  [data-page] .container { padding-left: 12px; padding-right: 12px; }
+
+  /* 木鱼 */
+  .woodfish svg { width: 120px; height: 120px; }
+  .woodfish-count { font-size: 14px; }
+
+  /* 底部额外安全区域 */
+  #app { padding-bottom: 70px; }
+
+  /* 按钮全宽 */
+  .btn-row .btn { flex: 1; min-width: 0; }
+  .btn-row { gap: 6px; }
+}
+
+/* ---- 小屏 375px (iPhone SE) ---- */
+@media (min-width: 361px) and (max-width: 390px) {
+  .hero-title { font-size: 26px; }
+  .gift-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+  .social-grid { grid-template-columns: repeat(3, 1fr); }
+  .bottom-nav span { display: none; }
+  .woodfish svg { width: 140px; height: 140px; }
+
+  /* 确保触控目标 >= 44px */
+  .btn, .icon-btn, .bottom-nav button { min-height: 44px; min-width: 44px; }
+
+  /* 输入框防缩放 */
+  input[type="text"], input[type="password"], input[type="email"], input[type="search"], textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ---- 中屏 414px (iPhone 标准) ---- */
+@media (min-width: 391px) and (max-width: 430px) {
+  .gift-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+  .social-grid { grid-template-columns: repeat(3, 1fr); }
+  .merit-grid { grid-template-columns: 1fr 1fr; }
+  .woodfish svg { width: 160px; height: 160px; }
+}
+
+/* ---- 大屏 430px (iPhone Pro Max) ---- */
+@media (min-width: 431px) and (max-width: 480px) {
+  .gift-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+  .merit-grid { grid-template-columns: 1fr 1fr; }
+  .bottom-nav span { display: inline; font-size: 10px; }
+}
+
+/* ---- iPad 竖屏 768-834px ---- */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .container { max-width: 600px !important; margin: 0 auto; }
+  [data-page] .container { padding-left: 24px; padding-right: 24px; }
+  .social-grid { grid-template-columns: repeat(3, 1fr); }
+  .gift-grid { grid-template-columns: repeat(3, 1fr); }
+  .video-grid { grid-template-columns: repeat(3, 1fr); }
+  .merit-grid { grid-template-columns: 1fr 1fr; max-width: 600px; margin: 0 auto; }
+  .bottom-nav { max-width: 600px; left: 50%; transform: translateX(-50%); border-radius: 20px 20px 0 0; }
+  #status-bar { max-width: 600px; margin: 0 auto; border-radius: 0 0 16px 16px; }
+  .album-carousel { max-width: 500px; margin: 0 auto; }
+  .woodfish svg { width: 160px; height: 160px; }
+
+  /* 3D轮播 perspective 增大 */
+  .passion-ring { perspective: 1500px; }
+}
+
+/* ---- iPad 横屏 1024-1366px ---- */
+@media (min-width: 1024px) and (max-width: 1367px) and (orientation: landscape) {
+  .container { max-width: 600px !important; margin: 0 auto; }
+  body { background: #0a0010; }
+  .bottom-nav { max-width: 600px; left: 50%; transform: translateX(-50%); border-radius: 20px 20px 0 0; }
+  #status-bar { max-width: 600px; margin: 0 auto; border-radius: 0 0 16px 16px; }
+  .hero-title { font-size: 32px; }
+  .merit-grid { grid-template-columns: 1fr 1fr; max-width: 600px; margin: 0 auto; }
+
+  /* 悬停效果 */
+  .btn:hover, .glass-card:hover { transform: translateY(-2px); transition: transform 0.2s; }
+  .entry-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(217, 102, 255, 0.3); }
+}
+
+/* ---- 桌面端 1280px+ ---- */
+@media (min-width: 1280px) {
+  /* 内容区域居中 480px */
+  .container { max-width: 480px !important; margin: 0 auto; }
+  body { background: #0a0010; display: flex; justify-content: center; }
+
+  /* 桌面端隐藏移动端底部导航 */
+  .bottom-nav { display: none !important; }
+
+  /* 桌面端显示顶部导航 */
+  #desktop-nav { display: flex !important; }
+
+  /* 桌面端悬停效果 */
+  .btn:hover, .glass-card:hover { transform: translateY(-2px); transition: transform 0.2s; }
+  .entry-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(217, 102, 255, 0.3); }
+  .woodfish:hover { transform: scale(1.05); transition: transform 0.2s; }
+  .gift-grid .gift-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(255, 77, 166, 0.3); }
+  .video-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3); }
+
+  /* 桌面端键盘导航可见 */
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #d966ff; outline-offset: 2px; }
+
+  /* 左右背景延伸 */
+  #app { max-width: 480px; margin: 0 auto; box-shadow: 0 0 60px rgba(217, 102, 255, 0.1); }
+}
+
+/* ---- 超宽屏 2560px+ ---- */
+@media (min-width: 2000px) {
+  .container { max-width: 480px !important; }
+  body { background: radial-gradient(ellipse at center, #1a0020 0%, #0a0010 50%, #050008 100%); }
+  #app { max-width: 480px; border-radius: 24px; margin: 40px auto; }
+}
+
+/* ---- 桌面端顶部导航 ---- */
+#desktop-nav { display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 100; padding: 12px 24px; background: rgba(10, 0, 16, 0.8); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-radius: 0 0 16px 16px; gap: 8px; }
+#desktop-nav button { background: none; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 6px 14px; border-radius: 8px; font-size: 13px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+#desktop-nav button:hover { background: rgba(217, 102, 255, 0.15); color: #fff; border-color: rgba(217, 102, 255, 0.3); }
+
+/* ---- 触控优化 ---- */
+@media (hover: none) and (pointer: coarse) {
+  /* 移动端触控设备 */
+  .btn, .icon-btn, .bottom-nav button, .entry-card, .gift-grid .gift-card { cursor: default; -webkit-tap-highlight-color: transparent; }
+  /* 增加触控反馈 */
+  .btn:active, .bottom-nav button:active, .entry-card:active { transform: scale(0.96); }
+}
+
+/* ---- 无障碍：减少动画 ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .orbit, .login-orbit, .vinyl-disc, .preloader-icon { animation: none !important; }
+  .particle { display: none !important; }
+}
+
+/* ---- 深色模式强制 ---- */
+@media (prefers-color-scheme: light) {
+  /* 强制保持深色主题 */
+  body, #app, .glass-card { background-color: #0a0010 !important; color: #e0d0f0 !important; }
+}
+
+/* ---- 安全区域适配 ---- */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .bottom-nav { padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+  #app { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+}
+
+/* ---- 打印样式 ---- */
+@media print {
+  .bottom-nav, #music-panel, #gift-mask, #preloader, #login-overlay { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .glass-card { background: #f5f5f5 !important; box-shadow: none !important; border: 1px solid #ddd !important; }
+}

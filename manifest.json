@@ -1,0 +1,17 @@
+{
+  "name": "Hương Đang Lớn 💨 | Chocopei",
+  "short_name": "Chocopei",
+  "description": "VinaHouse & Chill cùng Chocopei. 683.8K follow, 12M thích. Gửi tim, tán hương, tích công đức!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0010",
+  "theme_color": "#0a0010",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "categories": ["music", "entertainment", "social"],
+  "lang": "vi",
+  "dir": "ltr"
+}

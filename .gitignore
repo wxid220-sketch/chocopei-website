@@ -1,0 +1,18 @@
+# Node / npm
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / logs
+*.log
+temp/
