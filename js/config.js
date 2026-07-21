@@ -20,20 +20,23 @@ const CONFIG = {
   telegram: 'https://t.me/+0RDVl3Cx_zljZWJl',
   soundcloud: 'https://soundcloud.com/vu-dinhdieu',
 
-  /* ---- 主视觉 / OG 图片 ---- */
+  /* ---- 主视觉 / OG 图片（使用真人照片，非卡通图） ---- */
   hero: {
-    webp: 'assets/thumbnails/login_avatar.webp',     // 全尺寸 Hero 背景
-    small: 'assets/thumbnails/login_particle.webp' // 小屏响应式版本
+    webp: 'assets/photos/gallery-03.webp',     // 全尺寸 Hero 背景：日落山顶
+    small: 'assets/photos/gallery-30.webp'     // 小屏响应式版本：烛光室内
   },
-  ogImage: 'assets/thumbnails/login_avatar.webp', // 1200×630 OG 图（相对路径，部署后拼绝对 URL）
+  ogImage: 'assets/photos/gallery-03.webp', // 1200×630 OG 图（相对路径，部署后拼绝对 URL）
 
-  /* ---- 登录层 4 素材（第二部分第三章） ---- */
+  /* ---- 登录层 4 素材（真人照片） ---- */
   login: {
-  bg: 'assets/thumbnails/login_bg.webp',          // 素材1：主背景（缓慢缩放）
-  transition: 'assets/thumbnails/login_transition.webp', // 素材2：转场画面
-  particle: 'assets/thumbnails/login_particle.webp',     // 素材3：装饰粒子（轨道漂浮）
-  avatar: 'assets/thumbnails/login_avatar.webp'          // 素材4：中央头像（呼吸灯边框）
+  bg: 'assets/photos/gallery-03.webp',          // 素材1：主背景 — 日落山顶
+  transition: 'assets/photos/gallery-05.webp',  // 素材2：转场 — 寺庙祈福
+  particle: 'assets/photos/gallery-30.webp',    // 素材3：装饰粒子 — 烛光室内
+  avatar: 'assets/photos/gallery-07.webp'       // 素材4：中央头像 — 纹身肖像
   },
+
+  /* ---- 敏感词过滤（空数组=不限制） ---- */
+  bannedWords: [],
 
   /* ---- 相册轮播（三张照片） ---- */
   album: [
